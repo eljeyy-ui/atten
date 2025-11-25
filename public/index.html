@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Attendance System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Student Attendance System</h1>
+            <p class="description">Track student attendance with ease</p>
+        </header>
+        
+        <div class="welcome-content">
+            <div class="welcome-icon">
+                <i class="fas fa-graduation-cap"></i>
+            </div>
+            <h2 class="welcome-text">Welcome to Our Attendance System</h2>
+            
+            <div class="role-selector">
+                <label for="roleSelect" class="role-label">Select Your Role:</label>
+                <select id="roleSelect" class="role-dropdown">
+                    <option value="">Please select a role</option>
+                    <option value="student">Student</option>
+                    <option value="teacher">Teacher</option>
+                </select>
+            </div>
+            
+            <button id="continueBtn" class="continue-btn">Continue</button>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <script>
+        document.getElementById('continueBtn').addEventListener('click', function() {
+            const role = document.getElementById('roleSelect').value;
+            
+            if (!role) {
+                alert('Please select a role first');
+                return;
+            }
+            
+            if (role === 'student') {
+                window.location.href = 'student.html';
+            } else if (role === 'teacher') {
+                window.location.href = 'teacher.html';
+            }
+        });
+    </script>
+
+<script src="config.js"></script>
+</body>
+</html>

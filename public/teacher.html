@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Attendance</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<div class="container">
+
+    <!-- HEADER -->
+    <header>
+        <h1>Student Attendance System</h1>
+        <p class="description">Teacher Attendance Portal</p>
+    </header>
+
+    <!-- LOGIN AREA -->
+    <div class="login-container" id="loginContainer">
+        <h2>Teacher Login</h2>
+
+        <div class="form-group">
+            <label for="teacherEmail">Email Address</label>
+            <input type="email" id="teacherEmail" placeholder="Enter admin email">
+            <div id="teacherEmailError" class="input-error"></div>
+        </div>
+
+        <div class="form-group">
+            <label for="teacherPassword">Password</label>
+            <input type="password" id="teacherPassword" placeholder="Enter admin password">
+            <div id="teacherPasswordError" class="input-error"></div>
+        </div>
+
+        <button id="loginBtn" class="submit-btn">Login</button>
+    </div>
+
+    <!-- DASHBOARD (hidden until login) -->
+    <div class="teacher-dashboard" id="teacherDashboard" style="display: none;">
+
+        <div class="dashboard-header">
+            <h2>Teacher Dashboard</h2>
+            <button class="dashboard-back-btn" id="backBtn">← Back</button>
+        </div>
+
+        <div class="dashboard-teacher-name">
+            <label for="teacherName">Teacher Name:</label>
+            <input type="text" id="teacherName" placeholder="Enter your name">
+        </div>
+
+        <!-- CONTROLS -->
+        <div class="dashboard-controls">
+
+            <div class="control-group">
+                <label for="subjectInput">Subject:</label>
+                <input type="text" id="subjectInput" placeholder="Enter subject">
+            </div>
+
+            <div class="control-group">
+                <label for="attendanceDate">Date:</label>
+                <input type="date" id="attendanceDate">
+            </div>
+
+            <div class="control-group">
+                <label for="searchStudent">Search:</label>
+                <input type="text" id="searchStudent" placeholder="Search students...">
+            </div>
+
+            <div class="control-group">
+                <label for="yearFilter">Year:</label>
+                <select id="yearFilter">
+                    <option value="">All Years</option>
+                    <option value="1st Year">1st Year</option>
+                    <option value="2nd Year">2nd Year</option>
+                    <option value="3rd Year">3rd Year</option>
+                    <option value="4th Year">4th Year</option>
+                </select>
+            </div>
+
+            <div class="control-group">
+                <label for="sectionFilter">Section:</label>
+                <select id="sectionFilter">
+                    <option value="">All Sections</option>
+                    <option value="Section A">Section A</option>
+                    <option value="Section B">Section B</option>
+                    <option value="Section C">Section C</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- STUDENT TABLE -->
+        <h3>Student Attendance</h3>
+        <table id="studentsTable">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Student Number</th>
+                    <th>Course/Year/Section</th>
+                    <th>Attendance</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+
+        <!-- ACTION BUTTONS -->
+        <div class="attendance-actions">
+            <button class="mark-all-btn" id="markAllBtn">Mark All Present</button>
+            <button class="save-btn" id="saveAttendanceBtn">Save Attendance</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Back button
+    document.getElementById("backBtn").addEventListener("click", () => {
+        window.location.href = "index.html";
+    });
+</script>
+
+<script src="config.js"></script>
+<script src="teacher.js"></script>
+</body>
+</html>

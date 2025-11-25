@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .input-error-border {
+            border: 1px solid red;
+        }
+        .field-error {
+            color: red;
+            font-size: 0.85rem;
+            margin-top: 4px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Student Attendance System</h1>
+            <p class="description">Student Registration</p>
+        </header>
+
+        <!-- RECTANGLE WRAPPER -->
+        <div class="registration-box">
+
+            <button class="back-btn" onclick="goBack()">Back to Home</button>
+            <h2>Student Registration</h2>
+
+            <form id="studentForm">
+
+                <div class="form-group">
+                    <label for="studentLastName">Last Name</label>
+                    <input type="text" id="studentLastName" placeholder="Enter your last name">
+                    <div id="lastNameError" class="field-error"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="studentGivenName">Given Name</label>
+                    <input type="text" id="studentGivenName" placeholder="Enter your given name">
+                    <div id="givenNameError" class="field-error"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="studentMiddleName">Middle Name (optional)</label>
+                    <input type="text" id="studentMiddleName" placeholder="Enter your middle name">
+                </div>
+
+                <div class="form-group">
+                    <label for="studentExtension">Extension (optional)</label>
+                    <input type="text" id="studentExtension" placeholder="Jr., Sr., III">
+                </div>
+
+                <div class="form-group">
+                    <label for="studentNumber">Student Number</label>
+                    <input type="text" id="studentNumber" placeholder="Enter student number">
+                    <div id="studentNumberError" class="field-error"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="yearSection">Course / Year / Section</label>
+                    <input type="text" id="yearSection" placeholder="Enter course/year/section">
+                    <div id="yearSectionError" class="field-error"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="studentEmail">Email</label>
+                    <input type="email" id="studentEmail" placeholder="Enter email">
+                    <div id="emailError" class="field-error"></div>
+                </div>
+
+                <button type="submit" class="submit-btn">Submit Registration</button>
+
+            </form>
+        </div>
+    </div>
+
+    <script src="config.js"></script>
+    <script src="student.js"></script>
+    <script>
+        function goBack() {
+            window.location.href = "index.html";
+        }
+    </script>
+
+</body>
+</html>
